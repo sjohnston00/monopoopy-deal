@@ -1,3 +1,5 @@
+import { PROPERTY_CARDS } from './cards.js'
+
 const cards = [
   {
     type: 'money',
@@ -6,47 +8,15 @@ const cards = [
   {
     type: 'money',
     value: 2
-  },
-  {
-    type: 'property',
-    value: 2,
-    color: 'brown',
-    name: 'Old Kent Road'
-  },
-  {
-    type: 'property',
-    value: 2,
-    color: 'brown',
-    name: 'Whitechapel Road'
-  },
-  {
-    type: 'property',
-    value: 4,
-    color: '#2C66AD',
-    name: 'Park Lane'
-  },
-  {
-    type: 'property',
-    value: 4,
-    color: '#2C66AD',
-    name: 'Mayfair'
-  },
-  {
-    type: 'property',
-    value: 4,
-    color: '#D02F26',
-    name: 'Trafalgar Square'
   }
 ]
 
-cards
-  .filter((card) => card.type === 'property')
-  .map((card) => {
-    const list = document.getElementById('property-card-list')
-    const propertyCard = createProperyCard(card)
+PROPERTY_CARDS.filter((card) => card.type === 'property').map((card) => {
+  const list = document.getElementById('property-card-list')
+  const propertyCard = createProperyCard(card)
 
-    list.appendChild(propertyCard)
-  })
+  list.appendChild(propertyCard)
+})
 
 function createProperyCard(card) {
   const propertyCard = document.createElement('div')
