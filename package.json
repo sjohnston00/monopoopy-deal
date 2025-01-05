@@ -1,0 +1,17 @@
+{
+  "name": "monopoopy-deal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build --base=./",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.7"
+  }
+}

@@ -66,7 +66,7 @@ body {
   & .property-card-body {
     display: flex;
     justify-content: flex-start;
-    margin-top: 1rem;
+    padding-top: 1rem;
     align-items: center;
     flex-direction: column;
     gap: 0.25rem;
@@ -142,4 +142,57 @@ body {
     font-weight: bold;
     font-variant-numeric: tabular-nums;
   }
+}
+
+.hand-area {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: visible;
+  & .hand-card {
+    transition: ease-in-out 0.15s;
+    transform-origin: bottom center;
+    transform: rotate(var(--r, 0deg)) translateY(var(--t, 0px));
+    user-select: none;
+  }
+
+  & .hand-card:not(:first-child) {
+    box-shadow: -3px 0 10px 1px rgba(0, 0, 0, 0.15);
+  }
+
+  /* & .hand-card:hover:nth-of-type(1) {
+    --r: -1deg;
+  }
+  & .hand-card:hover:nth-of-type(2) {
+    --r: -0deg;
+  }
+  & .hand-card:hover:nth-of-type(3) {
+    --r: 1deg;
+  }
+  & .hand-card:hover:nth-of-type(4) {
+    --r: 2deg;
+  } */
+
+  & .hand-card:hover {
+    --r: -1deg;
+    --t: -5rem;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+
+.flex {
+  display: flex;
+  overflow: hidden;
+}
+
+.-space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-3rem * var(--tw-space-x-reverse));
+  margin-left: calc(-3rem * calc(1 - var(--tw-space-x-reverse)));
 }
